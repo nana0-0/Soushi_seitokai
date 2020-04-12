@@ -1,0 +1,97 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "text",
+        "text": "目安箱",
+        "size": "lg",
+        "weight": "bold"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "weight": "bold",
+                "flex": 0,
+                "color": "#666666",
+                "text": "学校生活に関して意見や要望を承っております。",
+                "size": "sm",
+                "style": "normal",
+                "align": "start",
+                "wrap": true
+              }
+            ],
+            "margin": "sm"
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "contents": [
+              {
+                "type": "text",
+                "weight": "bold",
+                "size": "sm",
+                "margin": "sm",
+                "color": "#666666",
+                "flex": 0,
+                "text": "悪質な書き込みは控えて下さい。",
+                "wrap": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "text": "生徒会執行部",
+        "wrap": true,
+        "color": "#aaaaaa",
+        "size": "xs",
+        "align": "end",
+        "style": "normal",
+        "weight": "regular",
+        "margin": "lg"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "spacer",
+        "size": "xxl"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#0dc959",
+        "action": {
+          "type": "message",
+          "label": "書き込む",
+          "text": "書き込む"
+        },
+        "margin": "none"
+      }
+    ],
+    "margin": "none"
+  }
+}

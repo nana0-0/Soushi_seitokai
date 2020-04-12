@@ -1,0 +1,85 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "url": "https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?cs=srgb&dl=-355948.jpg&fm=jpg"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "contents": [
+          {
+            "type": "span",
+            "text": "意見",
+            "color": "#0dc959",
+            "weight": "bold",
+            "size": "lg"
+          },
+          {
+            "type": "span",
+            "text": " "
+          },
+          {
+            "type": "span",
+            "text": "を入力して下さい。",
+            "weight": "bold",
+            "size": "lg"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "意見は一つのメッセージとして送信して下さい。",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          }
+        ],
+        "margin": "sm"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "悪質な書き込みは控えて下さい。",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          }
+        ],
+        "margin": "sm"
+      },
+      {
+        "type": "text",
+        "text": "生徒会執行部",
+        "wrap": true,
+        "color": "#aaaaaa",
+        "size": "xs",
+        "align": "end",
+        "style": "normal",
+        "weight": "regular",
+        "margin": "lg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "env": {
+    "TOKEN": "@seitokai_token",
+    "TOKEN_DEV": "@seitokai_dev_token",
+    "MONGOPASS": "@mongo_password",
+    "HP": "@seitokai_hashed_password",
+    "BIAS": "@seitokai_bias",
+    "TIMEOUT": "3600"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "url": "https://images.pexels.com/photos/823301/pexels-photo-823301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "これでよろしいですか？",
+        "weight": "bold",
+        "size": "lg",
+        "wrap": true
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "返信方法：**ここに返信方法**",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          },
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "学年：**ここに学年**",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          },
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "クラス：**ここにクラス**",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          },
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "番号：**ここに番号**",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          },
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "名前：**ここに名前**",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          }
+        ],
+        "margin": "sm"
+      },
+      {
+        "type": "text",
+        "text": "生徒会執行部",
+        "wrap": true,
+        "color": "#aaaaaa",
+        "size": "xs",
+        "align": "end",
+        "style": "normal",
+        "weight": "regular",
+        "margin": "lg"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "message",
+          "label": "続ける",
+          "text": "続ける"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "message",
+          "label": "キャンセル",
+          "text": "キャンセル"
+        }
+      }
+    ]
+  }
+}

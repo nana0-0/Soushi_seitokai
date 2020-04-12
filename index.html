@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>生徒会執行部</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+<div id="app">
+    <v-app>
+        <v-content>
+            <v-app-bar
+                    color="grey accent-4"
+                    dense
+                    dark
+                    flat
+            >
+                <v-toolbar-title>生徒会執行部</v-toolbar-title>
+            </v-app-bar>
+            <v-container v-if="!loggedin">
+                <div class="d-flex flex-row mb-6 justify-center">
+                    <v-text-field
+                            v-model="password"
+                            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                            :type="show1 ? 'text' : 'password'"
+                            label="パスワード"
+                            counter
+                            @click:append="show1 = !show1"
+                            class="shrink"
+                    ></v-text-field>
+                    <v-btn depressed large color="grey" @click="login">開く</v-btn>
+                </div>
+                <div v-if="errormsg.length != 0">{{errormsg}}</div>
+
+            </v-container>
+            <v-container v-else>
+                <v-card
+                        class="mx-auto"
+                        max-width="500"
+                        outlined
+                        v-for="(s,i) in items"
+                        :key="i"
+                >
+                    <v-list-item three-line>
+                        <v-list-item-content>
+                            <div class="overline mb-4" v-if="s.name">{{s.gakunen}}{{s.class}}組{{s.number}}番</div>
+                            <v-list-item-title class="headline mb-1">{{s.name || "匿名"}}</v-list-item-title>
+                            <v-list-item-subtitle>{{s.suggestion}}</v-list-item-subtitle>
+                            <v-list-item-subtitle v-if="s.replied">{{"返信済みです"}}</v-list-item-subtitle>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-card-actions>
+                        <v-text-field
+                                v-model="messages[i]"
+                                :label="s.reply + 'へのメッセージ'"
+                                required
+                        ></v-text-field>
+                        <v-btn text @click="reply(i,s.userId,messages[i])">送信</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-container>
+        </v-content>
+    </v-app>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

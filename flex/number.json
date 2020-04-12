@@ -1,0 +1,85 @@
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "url": "https://images.pexels.com/photos/4831/hands-coffee-smartphone-technology.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "contents": [
+          {
+            "type": "span",
+            "text": "出席番号",
+            "color": "#0dc959",
+            "weight": "bold",
+            "size": "lg"
+          },
+          {
+            "type": "span",
+            "text": " "
+          },
+          {
+            "type": "span",
+            "text": "を入力して下さい。",
+            "weight": "bold",
+            "size": "lg"
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "半角数字で出席番号をメッセージとして送信して下さい。",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          }
+        ],
+        "margin": "sm"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "weight": "bold",
+            "flex": 0,
+            "color": "#666666",
+            "text": "<例> 23",
+            "size": "sm",
+            "style": "normal",
+            "align": "start",
+            "wrap": true
+          }
+        ],
+        "margin": "sm"
+      },
+      {
+        "type": "text",
+        "text": "生徒会執行部",
+        "wrap": true,
+        "color": "#aaaaaa",
+        "size": "xs",
+        "align": "end",
+        "style": "normal",
+        "weight": "regular",
+        "margin": "lg"
+      }
+    ]
+  }
+}
