@@ -60,7 +60,7 @@
                                 :label="s.reply + 'へのメッセージ'"
                                 required
                         ></v-text-field>
-                        <v-btn text @click="reply(i,s.userId,messages[i])">送信</v-btn>
+                        <v-btn text @click="reply(i,s.userId,messages[i],s.uuid)" :disabled="btn_disable">送信</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-container>

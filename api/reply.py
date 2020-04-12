@@ -48,6 +48,7 @@ def index(path):
         userid = request.form['userid']
         content = request.form['content']
         session = request.form['session']
+        uuid = request.form['uuid']
     except:
         return jsonify({"status": "error", "error": "form error"})
 
@@ -62,7 +63,7 @@ def index(path):
     if res.status_code != 200:
         return jsonify({"status": "error", "error": "line error", "status_code": res.status_code, "content": res.text})
 
-    done_collection.update_one({"userId": userid}, {"$set": {"replied": True}})
-    print("updated")
+    done_collection.update_one({"userId": userid, "uuid": uuid}, {"$set": {"replied": True}})
+    # print("updated")
 
     return jsonify({"status": "ok", "status_code": res.status_code, "content": res.text})

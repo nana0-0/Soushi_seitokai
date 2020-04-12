@@ -8,7 +8,8 @@ new Vue({
         loggedin: false,
         session: "",
         errormsg: "",
-        messages: []
+        messages: [],
+        btn_disable:true
       },
       created: function() {
         this.items.push("items3")
@@ -41,13 +42,14 @@ new Vue({
                 .then(d => {
                     console.log(d)
                     this.items = d.data
+                    this.btn_disable = false
                 })
             });
         },
-        reply:function(index,userid,text){
-
+        reply:function(index,userid,text,uuid){
+            this.btn_disable = true
             console.log("clicked")
-            const obj = {"session":this.session, content:text, userid}
+            const obj = {"session":this.session, content:text, userid, uuid}
             const body = Object.keys(obj).reduce((o,key)=>(o.set(key, obj[key]), o), new FormData());
             fetch("/api/reply", {
                 method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -58,7 +60,8 @@ new Vue({
             .then(d => {
                 console.log(d)
                 this.login()
-            });
+            })
+            .catch(()=>{btn_disable=false});
         }
       }
     })

@@ -8,6 +8,7 @@ from pymongo import MongoClient
 from pymongo.collection import Collection
 from pymongo.database import Database
 import re
+from uuid import uuid4
 
 MONGO_URL = f"mongodb+srv://nana:{os.environ['MONGOPASS']}" \
             f"@cluster0-fbhim.azure.mongodb.net/test?retryWrites=true&w=majority"
@@ -104,6 +105,7 @@ def index(path):
             if record["want"] == "userid":
                 if message_text == "書き込む":
                     record["want"] = "reply"
+                    record["uuid"] = str(uuid4())
             # reply
             elif record["want"] == "reply":
                 if message_text == "個人":
