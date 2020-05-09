@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 pprint(dict(os.environ))
 
-debug_mode = False if "PRODUCTION" in os.environ.keys() else True
+debug_mode = "PRODUCTION" not in os.environ.keys()
 access_token = os.environ["TOKEN_DEV"] if debug_mode else os.environ["TOKEN"]
 
 flex = {}

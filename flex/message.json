@@ -1,0 +1,75 @@
+{
+    "type": "bubble",
+    "hero": {
+        "type": "image",
+        "url": "https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover"
+    },
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+            {
+                "type": "text",
+                "contents": [
+                  {
+                    "type": "span",
+                    "text": "生徒会",
+                    "color": "#0dc959",
+                    "weight": "bold",
+                    "size": "lg"
+                  },
+                  {
+                    "type": "span",
+                    "text": " "
+                  },
+                  {
+                    "type": "span",
+                    "text": "からの返信です。",
+                    "weight": "bold",
+                    "size": "lg"
+                  }
+                ]
+              },
+            {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [
+                    {
+                        "type": "box",
+                        "layout": "baseline",
+                        "contents": [
+                            {
+                                "type": "text",
+                                "weight": "bold",
+                                "flex": 0,
+                                "color": "#666666",
+                                "text": "+++replace+++",
+                                "size": "sm",
+                                "style": "normal",
+                                "align": "start",
+                                "wrap": true
+                            }
+                        ],
+                        "margin": "sm"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "text": "生徒会執行部",
+                "wrap": true,
+                "color": "#aaaaaa",
+                "size": "xs",
+                "align": "end",
+                "style": "normal",
+                "weight": "regular",
+                "margin": "lg"
+            }
+        ]
+    }
+}

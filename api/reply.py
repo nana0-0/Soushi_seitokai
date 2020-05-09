@@ -23,6 +23,17 @@ client = MongoClient(MONGO_URL)
 db: Database = client["seitokai"]
 done_collection: Collection = db.done
 
+# pprint([p for p in Path("./flex/").iterdir()])
+p = Path("./flex/message.json")
+# print(p.stem)
+with p.open() as f:
+    try:
+        data = f.read()
+        flex = data
+    except Exception as e:
+        print(f"error at file {p}")
+        raise e
+
 
 def send(userid: str, content: str):
     res = requests.post(
@@ -33,8 +44,9 @@ def send(userid: str, content: str):
             "to": userid,
             "messages": [
                 {
-                    "type": "text",
-                    "text": content
+                    "type": "flex",
+                    "contents": json.loads(flex.replace("+++replace+++", content)),
+                    "altText": "要望について返信しました。確認して下さい。"
                 },
             ]})
     print("response :", res, res.content)
@@ -63,7 +75,8 @@ def index(path):
     if res.status_code != 200:
         return jsonify({"status": "error", "error": "line error", "status_code": res.status_code, "content": res.text})
 
-    done_collection.update_one({"userId": userid, "uuid": uuid}, {"$set": {"replied": True}})
+    done_collection.update_one({"userId": userid, "uuid": uuid}, {
+                               "$set": {"replied": True}})
     # print("updated")
 
     return jsonify({"status": "ok", "status_code": res.status_code, "content": res.text})
