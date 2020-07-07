@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-now --prod -e PRODUCTION="production"
-now
+echo use "vercel --prod"
+
+# now --prod -e PRODUCTION="production"
+# now
