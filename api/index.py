@@ -75,10 +75,10 @@ def index(path):
             except:
                 pass
 
-            print()
-            print(f"debug mode = {debug_mode}")
-            pprint(dict(os.environ))
             if debug_mode:
+                print()
+                print(f"debug mode = {debug_mode}")
+                pprint(dict(os.environ))
                 print("*****New Message*****")
                 # pprint(dict(os.environ))
                 try:
