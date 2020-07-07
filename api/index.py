@@ -77,6 +77,7 @@ def index(path):
 
             print()
             print(f"debug mode = {debug_mode}")
+            pprint(dict(os.environ))
             if debug_mode:
                 print("*****New Message*****")
                 # pprint(dict(os.environ))
