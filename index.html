@@ -16,7 +16,7 @@
     <div id="app">
         <v-app>
             <v-content style="background-color:#ffffff">
-                <v-app-bar style="background-color:#424242" flat>
+                <v-app-bar style="background-color:#454648" flat>
                     <v-toolbar-title style="color:#ffffff">生徒会執行部</v-toolbar-title>
                 </v-app-bar>
                 <v-container v-if="!loggedin">
@@ -36,39 +36,42 @@
 
                 </v-container>
                 <v-container v-else>
-                    <v-card class="mx-auto" max-width="500" style="margin: 30px;" shaped v-for="(s,i) in items"
-                        :key="i">
-                        <!-- <v-img class="align-end" height="200px"
-                            src="https://images.pexels.com/photos/1151300/pexels-photo-1151300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"> -->
+                    <!--個人情報と要望を含むカードを生成し、カードを新しく投稿された順にソートする-->
+                    <v-card class="mx-auto" max-width="500" style="margin: 30px;" shaped
+                        v-for="(s,i) in items.slice().reverse()" :key="i">
                         <v-list-item three-line>
                             <v-list-item-content>
+                                <!--返信が完了すると"返信済みです"と表示される-->
                                 <v-list-item-subtitle style="margin-bottom:10px;color:#00E676;" v-if="s.replied">
                                     <v-icon color="#00E676">mdi-check</v-icon>{{"返信済みです"}}
                                 </v-list-item-subtitle>
 
                                 <div class="d-flex">
+                                    <!--名前が定義されていたら名前を表示、名前が定義されていなかったら匿名を表示-->
                                     <v-list-item-title-bold class="headline mb-1 shrink" style="margin-right: 20px;">
                                         {{s.name || "匿名"}}
                                     </v-list-item-title-bold>
 
+                                    <!--名前が定義されていたら学年クラス番号を表示-->
                                     <div class="font-weight align-self-center" v-if="s.name">
                                         {{s.gakunen}}{{s.class}}組{{s.number}}番
                                     </div>
                                 </div>
-
+                                <!--要望を表示-->
                                 <v-list-item-subtitle>{{s.suggestion}}</v-list-item-subtitle>
-
                             </v-list-item-content>
                         </v-list-item>
 
                         <v-card-actions style="margin:5px;">
+                            <!--"タイムラインに投稿"か"個人に返信"へのメッセージを入力するテキストフィールド-->
+                            <!--v-model="messages[i]"の部分で返信する内容を保存している-->
                             <v-text-field v-model="messages[i]" :label="s.reply + 'へのメッセージ'" required>
                             </v-text-field>
+                            <!--送信ボタンを押したときに返信する内容とreply関数の引数を渡している-->
                             <v-btn style="margin:10px;" color="#00E676" outlined rounded
                                 @click="reply(i,s.userId,messages[i],s.uuid)" :disabled="btn_disable">送信
                             </v-btn>
                         </v-card-actions>
-                        </v-img>
                     </v-card>
                 </v-container>
             </v-content>

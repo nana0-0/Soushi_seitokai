@@ -25,11 +25,12 @@ done_collection: Collection = db.done
 @app.route("/", defaults={"path": ""}, methods=["POST"])
 @app.route("/<path:path>", methods=["POST"])
 def index(path):
+    #パスワードが入力されているかどうかの確認
     try:
         password = request.form['password']
     except:
         return jsonify({"status": "error", "error": "no password"})
-
+    #パスワードが間違っていたらエラー
     if not myauth.check_password(password):
         return jsonify({"status": "error", "error": "invalid password"})
 

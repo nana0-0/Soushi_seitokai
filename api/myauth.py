@@ -3,12 +3,14 @@ from datetime import datetime
 import os
 
 
-# ハッシュ化されたパスワードと比較
 def check_password(password: str) -> bool:
+    #HPに予め決められたパスワードのハッシュ化した値が代入されています
     hashed_password = os.environ["HP"]
 
+    #ログイン画面で入力されたパスワードをハッシュ化します
     hashed = hashlib.sha256(password.encode("utf-8")).hexdigest()
 
+    #予め決められたパスワードをハッシュ化したhashed_passwordと入力されたパスワードをハッシュ化したhashedを比較
     return hashed == hashed_password
 
 
